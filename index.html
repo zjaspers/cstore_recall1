@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Inventory - Recall Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #d9534f;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .product-item {
+            margin: 10px 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        .action-required {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+        .submit-btn {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .timestamp {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #5cb85c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vendor Inventory - Recall Submission</h1>
+        <h2>Urgent: Product Recall Immediate Action – Torch Lighters</h2>
+
+        <form id="recallForm">
+            <div class="product-item">
+                <input type="checkbox" id="item1" name="items" value="85754500759">
+                <label for="item1">ASSORTED TORCH LIGHTER - UPC 85754500759</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item2" name="items" value="68711007178">
+                <label for="item2">FREEDOM TORCH LIGHTER 12/DSP - UPC 68711007178</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item3" name="items" value="85754500793">
+                <label for="item3">JET TORCH LIGHTER - UPC 85754500793</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item4" name="items" value="85754500779">
+                <label for="item4">STRIKO TORCH LIGHTER - UPC 85754500779</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item5" name="items" value="68711007113">
+                <label for="item5">TORCH LIGHTER - UPC 68711007113</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item6" name="items" value="68711007102">
+                <label for="item6">TORCH LIGHTER - UPC 68711007102</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item7" name="items" value="42602091633">
+                <label for="item7">XUPER TORCH LIGHTER - UPC 42602091633</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item8" name="items" value="63863242903">
+                <label for="item8">JOHN DALY COLLECTION DOUBLE JET TORCH REFILLABLE - UPC 63863242903</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item9" name="items" value="62863242867">
+                <label for="item9">JOHN DALY COLLECTION JET TORCH REFILLABLE LIGHTER - UPC 62863242867/63863242867</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item10" name="items" value="63863242910">
+                <label for="item10">JOHN DALY JET TORCH REFILLABLE LIGHTER - UPC 63863242910</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item11" name="items" value="63863242903-8">
+                <label for="item11">JOHN DALY COLLECTION DOUBLE JET TORCH REFILLABLE - UPC 6-38632-42903-8</label>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="submitForm()">Submit</button>
+        </form>
+
+        <div class="action-required">
+            <p><strong>Action Required:</strong></p>
+            <ul>
+                <li>Perform a daily Price Book download.</li>
+                <li>Check all torch lighters for the impacted UPCs and pull the recall.</li>
+            </ul>
+        </div>
+
+        <div class="timestamp" id="timestampMessage" style="display: none;">
+            <p>Submission recorded on <span id="timestamp"></span>. Please reach out to Store Support if needed.</p>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            const timestamp = new Date().toLocaleString();
+            document.getElementById("timestamp").innerText = timestamp;
+            document.getElementById("timestampMessage").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
