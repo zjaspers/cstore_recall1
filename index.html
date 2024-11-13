@@ -9,7 +9,9 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             padding: 20px;
-            text-align: center;
+        }
+        h1, h2 {
+            color: #d9534f;
         }
         .container {
             max-width: 600px;
@@ -19,20 +21,16 @@
             border: 1px solid #ddd;
             border-radius: 8px;
         }
-        h1, h2 {
-            color: #d9534f;
-        }
-        .instructions, .product-list, .action-required {
-            margin-top: 20px;
-            text-align: left;
-        }
         .product-item {
             margin: 10px 0;
-            display: flex;
-            align-items: center;
         }
-        .product-item label {
-            margin-left: 10px;
+        label {
+            font-weight: bold;
+        }
+        .action-required {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
         }
         .submit-btn {
             margin-top: 20px;
@@ -42,14 +40,9 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-        }
-        .confirmation-message {
-            display: none;
-            text-align: left;
-            margin-top: 20px;
         }
         .timestamp {
+            margin-top: 15px;
             font-size: 14px;
             color: #5cb85c;
         }
@@ -57,76 +50,69 @@
 </head>
 <body>
 
-    <div class="container" id="formContainer">
+    <div class="container">
         <h1>Vendor Inventory - Recall Submission</h1>
         <h2>Urgent: Product Recall Immediate Action – Torch Lighters</h2>
 
-        <div class="instructions">
-            <p>Please check the boxes next to the torch lighters that need to be pulled. Once you've made your selections, click "Submit" to confirm and record your action.</p>
-        </div>
-
         <form id="recallForm">
-            <div class="product-list">
-                <div class="product-item">
-                    <input type="checkbox" id="item1" name="items" value="85754500759">
-                    <label for="item1">ASSORTED TORCH LIGHTER - UPC 85754500759</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item2" name="items" value="68711007178">
-                    <label for="item2">FREEDOM TORCH LIGHTER 12/DSP - UPC 68711007178</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item3" name="items" value="85754500793">
-                    <label for="item3">JET TORCH LIGHTER - UPC 85754500793</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item4" name="items" value="85754500779">
-                    <label for="item4">STRIKO TORCH LIGHTER - UPC 85754500779</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item5" name="items" value="68711007113">
-                    <label for="item5">TORCH LIGHTER - UPC 68711007113</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item6" name="items" value="68711007102">
-                    <label for="item6">TORCH LIGHTER - UPC 68711007102</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item7" name="items" value="42602091633">
-                    <label for="item7">XUPER TORCH LIGHTER - UPC 42602091633</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item8" name="items" value="63863242903">
-                    <label for="item8">JOHN DALY COLLECTION DOUBLE JET TORCH REFILLABLE - UPC 63863242903</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item9" name="items" value="62863242867">
-                    <label for="item9">JOHN DALY COLLECTION JET TORCH REFILLABLE LIGHTER - UPC 62863242867/63863242867</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item10" name="items" value="63863242910">
-                    <label for="item10">JOHN DALY JET TORCH REFILLABLE LIGHTER - UPC 63863242910</label>
-                </div>
-                <div class="product-item">
-                    <input type="checkbox" id="item11" name="items" value="63863242903-8">
-                    <label for="item11">JOHN DALY COLLECTION DOUBLE JET TORCH REFILLABLE - UPC 6-38632-42903-8</label>
-                </div>
+            <div class="product-item">
+                <input type="checkbox" id="item1" name="items" value="85754500759">
+                <label for="item1">ASSORTED TORCH LIGHTER - UPC 85754500759</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item2" name="items" value="68711007178">
+                <label for="item2">FREEDOM TORCH LIGHTER 12/DSP - UPC 68711007178</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item3" name="items" value="85754500793">
+                <label for="item3">JET TORCH LIGHTER - UPC 85754500793</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item4" name="items" value="85754500779">
+                <label for="item4">STRIKO TORCH LIGHTER - UPC 85754500779</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item5" name="items" value="68711007113">
+                <label for="item5">TORCH LIGHTER - UPC 68711007113</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item6" name="items" value="68711007102">
+                <label for="item6">TORCH LIGHTER - UPC 68711007102</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item7" name="items" value="42602091633">
+                <label for="item7">XUPER TORCH LIGHTER - UPC 42602091633</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item8" name="items" value="63863242903">
+                <label for="item8">JOHN DALY COLLECTION DOUBLE JET TORCH REFILLABLE - UPC 63863242903</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item9" name="items" value="62863242867">
+                <label for="item9">JOHN DALY COLLECTION JET TORCH REFILLABLE LIGHTER - UPC 62863242867/63863242867</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item10" name="items" value="63863242910">
+                <label for="item10">JOHN DALY JET TORCH REFILLABLE LIGHTER - UPC 63863242910</label>
+            </div>
+            <div class="product-item">
+                <input type="checkbox" id="item11" name="items" value="63863242903-8">
+                <label for="item11">JOHN DALY COLLECTION DOUBLE JET TORCH REFILLABLE - UPC 6-38632-42903-8</label>
             </div>
 
             <button type="button" class="submit-btn" onclick="submitForm()">Submit</button>
         </form>
-    </div>
 
-    <div class="container confirmation-message" id="confirmationMessage">
-        <h2>Recall Submission Successful</h2>
-        <p>Your submission has been recorded. Please take the following actions:</p>
-        <ul>
-            <li>Perform a daily Price Book download.</li>
-            <li>Check all torch lighters for the impacted UPCs and pull the recalled items.</li>
-        </ul>
-        <div class="timestamp">
-            <p>Submission recorded on <span id="timestamp"></span>.</p>
-            <p>If you need further assistance, please reach out to Store Support.</p>
+        <div class="action-required">
+            <p><strong>Action Required:</strong></p>
+            <ul>
+                <li>Perform a daily Price Book download.</li>
+                <li>Check all torch lighters for the impacted UPCs and pull the recall.</li>
+            </ul>
+        </div>
+
+        <div class="timestamp" id="timestampMessage" style="display: none;">
+            <p>Submission recorded on <span id="timestamp"></span>. Please reach out to Store Support if needed.</p>
         </div>
     </div>
 
@@ -134,8 +120,7 @@
         function submitForm() {
             const timestamp = new Date().toLocaleString();
             document.getElementById("timestamp").innerText = timestamp;
-            document.getElementById("formContainer").style.display = "none";
-            document.getElementById("confirmationMessage").style.display = "block";
+            document.getElementById("timestampMessage").style.display = "block";
         }
     </script>
 
